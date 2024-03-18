@@ -33,6 +33,9 @@ class ViewController: UIViewController {
 extension ViewController: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        DispatchQueue.main.async {
+            self.StateLabel.text = "接続されました"
+        }
         print("didReceiveMessage")
     }
     
